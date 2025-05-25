@@ -55,6 +55,7 @@ button:hover {
   background-color: transparent;
 }
 
+/* ❤️ Kalp patlaması */
 #heart-wrapper {
   position: fixed;
   top: 0;
@@ -103,6 +104,19 @@ button:hover {
   100% { transform: rotate(-45deg) scale(0); opacity: 0; }
 }
 
+/* 🎇 Havai fişek */
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* 💬 Final mesaj */
 #final-message {
   font-size: 2em;
   color: crimson;
@@ -115,34 +129,19 @@ button:hover {
   to { opacity: 1; }
 }
 
-#fireworks {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  display: none;
-  z-index: 1;
-  pointer-events: none;
-}
-
-#heart-rain {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  pointer-events: none;
-  z-index: 3;
-}
-
+/* 💖 Emojiler */
+#heart-rain,
 #emojis {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
   pointer-events: none;
   z-index: 999;
+}
+
+#emojis {
+  height: 100%;
 }
 
 .falling-emoji {
@@ -153,16 +152,32 @@ button:hover {
 }
 
 @keyframes fallDown {
-  0% {
-    transform: translateY(-50px);
-    opacity: 0.9;
-  }
-  100% {
-    transform: translateY(100vh);
-    opacity: 0.4;
-  }
+  0% { transform: translateY(-50px); opacity: 0.9; }
+  100% { transform: translateY(100vh); opacity: 0.4; }
 }
 
+/* 🎁 Fotoğraf - ekran ortasında sabit */
+#giftPhoto {
+  position: fixed;
+  top: 8%; /* 🔼 Daha da yukarı */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 5;
+  display: none;
+  width: 200px;
+  max-width: 80%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  animation: popUpPhoto 1s ease;
+}
+
+
+@keyframes popUpPhoto {
+  0% { transform: translateX(-50%) scale(0.5); opacity: 0; }
+  100% { transform: translateX(-50%) scale(1); opacity: 1; }
+}
+
+/* 🎀 Alt yazılar */
 .bottom-text {
   position: fixed;
   bottom: 10px;
@@ -198,6 +213,7 @@ button:hover {
   100% { transform: translateX(-100%); }
 }
 
+/* 💬 Soru animasyonu */
 #question {
   animation: glowText 2s infinite;
 }
@@ -220,22 +236,6 @@ button:hover {
   50% {
     text-shadow: 0 0 2px #fff, 0 0 4px #ff4da6, 0 0 10px #ff4da6, 0 0 20px #ff4da6;
   }
-}
-
-/* 🎁 Hediye Fotoğrafı */
-#giftPhoto {
-  display: block;
-  margin: 20px auto 0 auto;
-  width: 280px;
-  max-width: 90%;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
-  animation: popUpPhoto 1s ease;
-}
-
-@keyframes popUpPhoto {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
 }
 
 /* 🧸 Ayıcık */
@@ -284,17 +284,4 @@ button:hover {
 @keyframes nameFall {
   0% { transform: translateY(0); opacity: 1; }
   100% { transform: translateY(100vh); opacity: 0.3; }
-}
-#giftPhoto {
-  display: block;
-  margin: 20px auto 0 auto;
-  width: 200px; /* daha küçük */
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
-  animation: popUpPhoto 1s ease;
-}
-
-@keyframes popUpPhoto {
-  0% { transform: scale(0.5); opacity: 0; }
-  100% { transform: scale(1); opacity: 1; }
 }
