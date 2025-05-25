@@ -159,10 +159,10 @@ function showFireworks() {
       if (p.alpha <= 0) particles.splice(i, 1);
     });
 
-    if (particles.length < 100) { 
+    if (particles.length < 20) { 
       const x = Math.random() * fireworks.width;
       const y = Math.random() * fireworks.height;
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 10; i++) {
         particles.push(new Particle(x, y));
       }
     }
