@@ -1,0 +1,300 @@
+@import url('https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap');
+
+body {
+  background-color: #fff5f8;
+  font-family: 'Patrick Hand', cursive;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  height: 100vh;
+  user-select: none;
+  position: relative;
+}
+
+.container {
+  text-align: center;
+  z-index: 2;
+  position: relative;
+  top: 30%;
+  animation: cartoonPop 1s ease;
+}
+
+@keyframes cartoonPop {
+  0% { transform: scale(0.3) rotate(-10deg); opacity: 0; }
+  70% { transform: scale(1.1) rotate(3deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg); }
+}
+
+.buttons {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+}
+
+button {
+  font-size: 22px;
+  padding: 15px 35px;
+  border: none;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffb6c1, #ff69b4);
+  box-shadow: 0 8px 16px rgba(255, 105, 180, 0.4);
+  color: white;
+  font-family: 'Patrick Hand', cursive;
+  transition: all 0.3s ease;
+  transform: scale(1);
+}
+
+button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 20px rgba(255, 105, 180, 0.6);
+}
+
+#yesBtn,
+#noBtn {
+  background-color: transparent;
+}
+
+#heart-wrapper {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 0, 0, 0.1);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.big-heart {
+  width: 150px;
+  height: 135px;
+  background-color: red;
+  transform: rotate(-45deg) scale(0);
+  animation: pulse 1.3s ease-out forwards;
+  position: relative;
+}
+
+.big-heart::before,
+.big-heart::after {
+  content: "";
+  width: 150px;
+  height: 135px;
+  background-color: red;
+  border-radius: 50%;
+  position: absolute;
+}
+
+.big-heart::before {
+  top: -75px;
+  left: 0;
+}
+
+.big-heart::after {
+  left: 75px;
+  top: 0;
+}
+
+@keyframes pulse {
+  0% { transform: rotate(-45deg) scale(0); opacity: 0; }
+  50% { transform: rotate(-45deg) scale(2); opacity: 1; }
+  100% { transform: rotate(-45deg) scale(0); opacity: 0; }
+}
+
+#final-message {
+  font-size: 2em;
+  color: crimson;
+  margin-top: 20px;
+  opacity: 0;
+  animation: fadeIn 2s forwards;
+}
+
+@keyframes fadeIn {
+  to { opacity: 1; }
+}
+
+#fireworks {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: none;
+  z-index: 1;
+  pointer-events: none;
+}
+
+#heart-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+  z-index: 3;
+}
+
+#emojis {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+}
+
+.falling-emoji {
+  position: absolute;
+  font-size: 30px;
+  animation: fallDown linear infinite;
+  filter: drop-shadow(0 0 4px white);
+}
+
+@keyframes fallDown {
+  0% {
+    transform: translateY(-50px);
+    opacity: 0.9;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0.4;
+  }
+}
+
+.bottom-text {
+  position: fixed;
+  bottom: 10px;
+  left: 0;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  z-index: 1000;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.left-fixed {
+  color: hotpink;
+  padding-left: 20px;
+  margin-bottom: 32px;
+}
+
+.scroll-right {
+  white-space: nowrap;
+  animation: scrollText 10s linear infinite;
+  color: deeppink;
+  font-weight: bold;
+}
+
+.scroll-right.delay {
+  animation-delay: 5s;
+}
+
+@keyframes scrollText {
+  0% { transform: translateX(100vw); }
+  100% { transform: translateX(-100%); }
+}
+
+#question {
+  animation: glowText 2s infinite;
+}
+
+@keyframes glowText {
+  0% { text-shadow: 0 0 10px #fff; }
+  50% { text-shadow: 0 0 20px #ff69b4, 0 0 30px #ff1493; }
+  100% { text-shadow: 0 0 10px #fff; }
+}
+
+.final-text {
+  color: white;
+  animation: neonGlow 1.5s infinite;
+}
+
+@keyframes neonGlow {
+  0%, 100% {
+    text-shadow: 0 0 5px #fff, 0 0 10px #ff4da6, 0 0 20px #ff4da6, 0 0 40px #ff4da6;
+  }
+  50% {
+    text-shadow: 0 0 2px #fff, 0 0 4px #ff4da6, 0 0 10px #ff4da6, 0 0 20px #ff4da6;
+  }
+}
+
+/* 🎁 Hediye Fotoğrafı */
+#giftPhoto {
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 280px;
+  max-width: 90%;
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  animation: popUpPhoto 1s ease;
+}
+
+@keyframes popUpPhoto {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* 🧸 Ayıcık */
+.cute-character {
+  font-size: 80px;
+  position: fixed;
+  bottom: 120px;
+  left: 20px;
+  animation: floatUpDown 3s ease-in-out infinite;
+}
+
+@keyframes floatUpDown {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+/* 💖 Yazı yağmuru */
+#name-rain {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 999;
+  overflow: hidden;
+}
+
+.name-drop {
+  position: absolute;
+  left: 0;
+  top: -50px;
+  color: #ff69b4;
+  font-size: 28px;
+  font-weight: bold;
+  white-space: nowrap;
+  opacity: 0.95;
+  animation: nameFall 7s linear forwards;
+  text-shadow: 0 0 4px #fff, 0 0 10px #ff69b4;
+  filter: drop-shadow(0 0 2px #fff);
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes nameFall {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(100vh); opacity: 0.3; }
+}
+#giftPhoto {
+  display: block;
+  margin: 20px auto 0 auto;
+  width: 200px; /* daha küçük */
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(255, 105, 180, 0.5);
+  animation: popUpPhoto 1s ease;
+}
+
+@keyframes popUpPhoto {
+  0% { transform: scale(0.5); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}

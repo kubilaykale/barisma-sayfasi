@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <title>Benimle Barışır mısın?</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Patrick+Hand&display=swap" rel="stylesheet">
+</head>
+<body onclick="initAudio()">
+  <div id="name-rain"></div>
+
+  <div id="emoji-bg"></div>
+  <p class="typewriter">Seni çok seviyorum...</p>
+
+  <div class="container">
+    <h1 id="question">Barışmak ister misin? 🥺</h1>
+    <div class="buttons">
+      <button id="yesBtn">Evet <span class="heart">💖</span></button>
+      <button id="noBtn">Hayır <span>❌</span></button>
+    </div>
+    <div id="final-message"></div>
+
+    <div id="draw-heart-canvas-wrapper" style="display: none; margin-top: 20px;">
+      <canvas id="heartCanvas" width="300" height="300"></canvas>
+    </div>
+
+    <div id="gift-box" style="display: none; text-align: center; margin-top: 20px;">
+      <button id="openGiftBtn">🎁 Hediye Aç</button>
+      <div id="giftMessage" style="display: none; font-size: 24px; color: #e91e63; margin-top: 20px;">
+        🎉 Seni seviyorum! 💖
+      </div>
+      <img id="giftPhoto" src="bilgehan.jpeg" alt="Sürpriz Fotoğraf" style="display: none;">
+    </div>
+  </div>
+
+  <div id="heart-wrapper"><div class="big-heart"></div></div>
+  <div id="emojis"></div>
+  <div id="heart-rain"></div>
+  <canvas id="fireworks"></canvas>
+
+  <div class="bottom-text">
+    <span class="left-fixed">Beni Affet 💌</span>
+    <span class="scroll-right">Seni Seviyorum 💖</span>
+    <span class="scroll-right delay">Seni Seviyorum 💖</span>
+  </div>
+
+  <audio id="boom" src="fisek.wav"></audio>
+  <script src="script.js"></script>
+  <div class="cute-character">🧸</div>
+</body>
+</html>
