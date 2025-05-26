@@ -265,7 +265,7 @@ function startNameRain() {
 
     const drop = document.createElement("div");
     drop.className = "name-drop";
-    drop.textContent = "Melik ❤️ Yağmur";
+    drop.textContent = "ÖZGE❤️KUBİLAY";
     drop.style.left = `${Math.random() * 90}%`;
     drop.style.fontSize = `${24 + Math.random() * 8}px`;
     drop.style.animationDuration = `${6 + Math.random() * 2}s`;
